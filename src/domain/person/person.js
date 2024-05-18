@@ -17,22 +17,22 @@ class Person extends Entity {
     constructor(name, lastName, birthDate, email, phone, address, id) {
         super(id);
 
-        if (!name) throw new TypeError('O campo "Nome da Pessoa" é obrigatório.');
-        if (!lastName) throw new TypeError('O campo "Sobrenome da Pessoa" é obrigatório.');
-
-        if (!birthDate) throw new TypeError('O campo "Data de Nascimento da Pessoa" é obrigatório.');
-        if ((typeof birthDate) !== 'string') throw new TypeError('O campo "Data de Nascimento da Pessoa" deve do tipo string.');
+        if (!name) throw new TypeError('The "Person Name" field is required.');
+        if (!lastName) throw new TypeError('The "Person Surname" field is required.');
+        
+        if (!birthDate) throw new TypeError('The "Person Birth Date" field is required.');
+        if ((typeof birthDate) !== 'string') throw new TypeError('The "Person Birth Date" field must be a string.');
         const bDate = moment(birthDate, 'YYYY-MM-DD');
-        if (!bDate.isValid()) throw new TypeError('O campo "Data de Nascimento da Pessoa" deve ser uma data no formato YYYY-MM-DD.');
-
-        if (!email) throw new TypeError('O campo "E-mail da Pessoa" é obrigatório.');
-        if (!(email instanceof Email)) throw new TypeError('O campo "E-mail da Pessoa" deve ser do tipo Email.');
-
-        if (!phone) throw new TypeError('O campo "Telefone da Pessoa" é obrigatório.');
-        if (!(phone instanceof Phone)) throw new TypeError('O campo "Telefone da Pessoa" deve ser do tipo Phone.');
-
-        if (!address) throw new TypeError('O campo "Endereço da Pessoa" é obrigatório.');
-        if (!(address instanceof Address)) throw new TypeError('O campo "Endereço da Pessoa" deve ser do tipo Address.');
+        if (!bDate.isValid()) throw new TypeError('The "Person Birth Date" field must be a date in the format YYYY-MM-DD.');
+        
+        if (!email) throw new TypeError('The "Person Email" field is required.');
+        if (!(email instanceof Email)) throw new TypeError('The "Person Email" field must be of type Email.');
+        
+        if (!phone) throw new TypeError('The "Person Phone" field is required.');
+        if (!(phone instanceof Phone)) throw new TypeError('The "Person Phone" field must be of type Phone.');
+        
+        if (!address) throw new TypeError('The "Person Address" field is required.');
+        if (!(address instanceof Address)) throw new TypeError('The "Person Address" field must be of type Address.');
 
         this.name = name;
         this.lastName = lastName;

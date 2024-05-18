@@ -11,20 +11,20 @@ class Address {
      * @param {string} additionalInfo Complemento
      */
     constructor(street, streetNumber, district, zipCode, city, state, additionalInfo) {
-        if (!street) throw new TypeError('O campo "Rua" é obrigatório.');
-        if (!streetNumber) throw new TypeError('O campo "Número", referente ao "Endereço" é obrigatório.');
-        if (!district) throw new TypeError('O campo "Bairro" é obrigatório.');
-
-        if (!zipCode) throw new TypeError('O campo "CEP" é obrigatório.');
-        if (zipCode.length != 8) throw new TypeError('O campo "CEP" deve conter 8 números, sem traços ou pontos.');
-        if (!/^\d+$/.test(zipCode)) throw new TypeError('O campo "CEP" deve conter 8 números, sem traços ou pontos.');
-
-        if (!city) throw new TypeError('O campo "Cidade" é obrigatório.');
-
-        if (!state) throw new TypeError('O campo "Estado" é obrigatório.');
-        if (state.length != 2) throw new TypeError('O campo "Estado" deve conter somente 2 letras, sem traços ou pontos.');
-        if (!/^[a-zA-Z]+$/.test(state)) throw new TypeError('O campo "Estado" deve conter somente 2 letras, sem traços ou pontos.');
-
+        if (!street) throw new TypeError('The "Street" field is required.');
+        if (!streetNumber) throw new TypeError('The "Number" field, related to the "Address" is required.');
+        if (!district) throw new TypeError('The "District" field is required.');
+        
+        if (!zipCode) throw new TypeError('The "ZIP Code" field is required.');
+        if (zipCode.length != 8) throw new TypeError('The "ZIP Code" field must contain 8 numbers, without hyphens or periods.');
+        if (!/^\d+$/.test(zipCode)) throw new TypeError('The "ZIP Code" field must contain 8 numbers, without hyphens or periods.');
+        
+        if (!city) throw new TypeError('The "City" field is required.');
+        
+        if (!state) throw new TypeError('The "State" field is required.');
+        if (state.length != 2) throw new TypeError('The "State" field must contain only 2 letters, without hyphens or periods.');
+        if (!/^[a-zA-Z]+$/.test(state)) throw new TypeError('The "State" field must contain only 2 letters, without hyphens or periods.');
+        
         this.street = street;
         this.streetNumber = streetNumber;
         this.district = district;
