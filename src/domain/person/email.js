@@ -5,8 +5,8 @@ class Email {
      * @param {string} value Valor correspondente ao e-mail
      */
     constructor(value) {
-        if (!value) throw new TypeError('O campo "E-mail" é obrigatório.');
-        if (!this.validateEmail(value)) throw new TypeError('O e-mail informado é inválido.');
+        if (!value) throw new TypeError('The "Email" field is required.');
+        if (!this.validateEmail(value)) throw new TypeError('The email provided is invalid.');
 
         this.value = value;
     }
