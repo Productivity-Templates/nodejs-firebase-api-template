@@ -4,6 +4,9 @@
         "indexes": "firestore.indexes.json"
     },
     "functions": {
-        "source": "dist"
+        "source": "dist",
+        "runtime":{
+            "node":"20"
+        }
     }
 }
